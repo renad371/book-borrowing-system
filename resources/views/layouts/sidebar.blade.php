@@ -1,18 +1,15 @@
 <style>
-    /* الأساسيات */
     :root {
         --primary-color: #007bff;
         --sidebar-width: 250px;
         --transition-timing: 0.3s;
     }
 
-    /* حاوية الشريط الجانبي */
     .sidebar-container {
         position: relative;
         z-index: 1000;
     }
 
-    /* تصميم الشريط الجانبي */
     .sidebar {
         position: fixed;
         top: 100px;
@@ -27,12 +24,10 @@
         overflow-y: auto;
     }
 
-    /* حالة الفتح */
     .sidebar.open {
         transform: translateX(var(--sidebar-width));
     }
 
-    /* عناصر القائمة */
     .sidebar .list-group-item {
         border: none;
         border-radius: 8px;
@@ -60,7 +55,6 @@
         font-weight: 500;
     }
 
-    /* زر التفعيل */
     .sidebar-toggle {
         position: fixed;
         top: 110px;
@@ -81,7 +75,6 @@
         color: var(--primary-color);
     }
 
-    /* للشاشات الصغيرة */
     @media (max-width: 768px) {
         .sidebar {
             top: 70px;
@@ -93,7 +86,6 @@
             left: 10px;
         }
 
-        /* غامق الخلفية عند الفتح */
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -111,7 +103,6 @@
     }
 </style>
 
-<!-- العناصر الهيكلية -->
 <div class="sidebar-container">
     <button class="sidebar-toggle" id="sidebar-toggle">
         <i class="fas fa-bars"></i>
@@ -137,7 +128,6 @@
 </div>
 
 <script>
-    // التحكم في فتح/إغلاق الشريط
     const toggleBtn = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.sidebar-overlay');
@@ -150,7 +140,6 @@
         sidebar.classList.remove('open');
     });
 
-    // إغلاق الشريط عند تغيير حجم الشاشة
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             sidebar.classList.remove('open');

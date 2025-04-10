@@ -238,19 +238,18 @@
             var url = $form.attr('action');
             var data = $form.serialize();
 
-            // تعطيل الزر أثناء التنفيذ لتجنب الضغط المزدوج
             $borrowButton.prop('disabled', true);
 
             $.ajax({
                 url: url,
                 type: 'POST',
                 data: data,
-                dataType: 'json', // نتوقع استجابة بصيغة JSON
+                dataType: 'json', 
                 success: function(response) {
-                    console.log(response); // عرض الاستجابة في وحدة التحكم للتصحيح
+                    console.log(response); 
                     if(response.success){
-                        alert(response.message); // عرض رسالة النجاح
-                        // تغيير نص الزر وتعديل التنسيق
+                        alert(response.message); 
+                        
                         $borrowButton.text('Book Borrowed')
                                      .removeClass('btn-primary')
                                      .addClass('btn-secondary');

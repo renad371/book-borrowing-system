@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            
+
             @foreach($authors as $author)
             <tr>
                 <td>{{ $author->id }}</td>
@@ -26,7 +26,7 @@
                 <td>{{ \Illuminate\Support\Str::limit($author->bio, 50) }}</td>
                 <td>
                     <!-- Edit button; changed color to blue info -->
-                    <button class="btn btn-info btn-sm" 
+                    <button class="btn btn-info btn-sm"
                         onclick="openAuthorModal({{ $author->id }}, '{{ addslashes($author->name) }}', `{{ addslashes($author->bio) }}`)">
                         Edit
                     </button>
@@ -73,10 +73,10 @@
 @section('scripts')
 <!-- DataTables -->
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#authors-table').DataTable({
             "language": {
-               "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/en-GB.json"
+                "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/en-GB.json"
 
             }
         });

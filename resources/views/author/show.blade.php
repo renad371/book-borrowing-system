@@ -180,11 +180,11 @@
                 url: url,
                 type: 'POST',
                 data: data,
-                dataType: 'json', // نتوقع استجابة بصيغة JSON
+                dataType: 'json', 
                 success: function(response) {
-                    console.log(response); // التحقق من الاستجابة عبر وحدة التحكم
+                    console.log(response); 
                     if (response.success) {
-                        // إضافة التقييم الجديد لقسم المراجعات دون إعادة تحميل الصفحة
+                       
                         $('#reviewsList').prepend(response.reviewHtml);
                         $('#reviewModal').modal('hide');
                         alert(response.message || 'Review submitted successfully!');

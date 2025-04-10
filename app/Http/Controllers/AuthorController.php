@@ -96,7 +96,7 @@ class AuthorController extends Controller
                 ->first();
         }
 
-      
+
         return view('author.show', [
             'books' => $books,
             'author' => $author,
@@ -137,4 +137,5 @@ class AuthorController extends Controller
         $author->delete();
         return redirect()->route('authors.index')->with('success', 'Author deleted successfully!');
     }
+    
 }

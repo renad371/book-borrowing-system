@@ -49,32 +49,6 @@ class UserController extends Controller
     //     session(['email' => $request->email]);
     //     return response()->json(['message' => 'OTP has been sent to your email.'], 200);
     // }
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-        $request->session()->regenerate();
-
-        if ($validator->fails()) {
-            return  back()->with('error', 'Invalid validator');
-           
-        }
-
-        
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-          
-        return redirect()->route('home');
-
-    }
-
     // public function verifyOtp(Request $request)
     // {
      
@@ -104,6 +78,32 @@ class UserController extends Controller
         
     //     return redirect()->route('home')->with('success', 'تم التحقق بنجاح!');
     // }
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+        $request->session()->regenerate();
+
+        if ($validator->fails()) {
+            return  back()->with('error', 'Invalid validator');
+           
+        }
+
+        
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+          
+        return redirect()->route('home');
+
+    }
+
 
 
     /**
