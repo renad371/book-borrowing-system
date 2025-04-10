@@ -1,0 +1,186 @@
+/* start global styles settings */
+:root {
+    --primary-color: #257180;
+    --primary-color-hover: #a5eaf8;
+    --primary-color-light: #63d9f0;
+    --primary-color-light-rgb: #25718033;
+    --mdb-input-focus-border-color: var(--primary-color);
+    --mdb-input-focus-label-color: var(--primary-color);
+    font-size: 12px;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn.btn-primary {
+    --mdb-btn-bg: var(--primary-color);
+    --mdb-btn-color: white;
+    --mdb-btn-box-shadow: 0 0 5px 1px var(--primary-color);
+    --mdb-btn-hover-bg: var(--primary-color-light);
+    --mdb-btn-hover-color: black;
+    --mdb-btn-focus-bg: var(--primary-color-light);
+    --mdb-btn-focus-color: black;
+    --mdb-btn-active-bg: var(--primary-color);
+    --mdb-btn-active-color: white;
+    --mdb-btn-box-shadow-state: 0 0 10px 2px #25718033, 0 0 10px 2px #25718033;
+}
+
+.btn-check:focus-visible + .btn-primary,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+    color: black;
+}
+
+body {
+    font-family: "Delius Unicase", cursive;
+    font-style: normal;
+    background-color: #ececec;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+}
+
+/* end global styles settings */
+
+/* NavBar */
+.navbar {
+    --mdb-nav-link-color: var(--primary-color);
+    --mdb-navbar-active-color: var(--primary-color);
+    background-color: #0b0b40;
+}
+
+.navbar.transparent {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-nav {
+    padding: 0 15%;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.5s;
+    color: black;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 10px var(--primary-color);
+}
+
+.navbar-nav .nav-link:after {
+    transition: all 0.3s;
+    content: "";
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    height: 10%;
+    width: 0%;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 80%;
+    background: var(--primary-color);
+}
+
+.nav-link.active:after {
+    width: 35%;
+}
+
+.avatar a {
+    color: rgb(7, 13, 69);
+}
+
+#notifications-icon {
+    transition: all 0.1s;
+    color: black;
+}
+
+/* end navbar */
+
+/* start sidebar */
+@media (min-width: 200px) {
+    .d-lg-block {
+        display: block !important;
+    }
+}
+
+.sidebar {
+    height: 85vh;
+}
+
+.list-group {
+    --mdb-list-group-action-hover-bg: var(--primary-color-hover);
+}
+
+.list-group-item {
+    border: none;
+}
+
+.list-group-item-action.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.list-group-item-action:focus.active {
+    background-color: var(--primary-color);
+}
+.list-group-item-action:focus {
+    background-color: transparent;
+}
+/* end sidebar */
+
+/* start footer */
+footer {
+    color: white;
+    background-color: var(--primary-color);
+}
+/* end footer */
+
+/* start data tables */
+#datatable {
+    font-size: small;
+}
+#datatable td {
+    line-height: 50px;
+    font-weight: bold;
+    padding: 1rem !important;
+}
+
+#datatable .dt-type-numeric {
+    text-align: center;
+}
+
+/* end data tables */
+
+
+/* start forms */
+.form-outline .form-control.select-input {
+    box-sizing: border-box !important;
+    transition: all 0.1s linear !important;
+    border: var(--mdb-form-control-border-color) 1px solid !important;
+}
+
+.form-outline .form-control.select-input:focus,
+.form-control.file-input:focus {
+    box-shadow: inset 0px 0px 0px 1px var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.select-input ~ label {
+    background-color: white;
+    transform: translateY(-1rem) translateY(0.1rem) scale(0.8);
+}
