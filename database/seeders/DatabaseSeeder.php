@@ -32,13 +32,11 @@ class DatabaseSeeder extends Seeder
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
-
-        // إنشاء الأدوار وربط الصلاحيات بها
-        $admin = Role::create(['name' => 'admin']);
+\
+        $admin = Role::create(['name' => 'Administrator']);
         $user = Role::create(['name' => 'user']);
-
-        // إعطاء صلاحيات لكل دور
-        $admin->givePermissionTo(Permission::all()); // المسؤول لديه كل الصلاحيات
+\
+        $admin->givePermissionTo(Permission::all());
         $user->givePermissionTo(['borrow books', 'return books']);
 
         $admin = User::first();
