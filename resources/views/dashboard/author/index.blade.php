@@ -18,6 +18,7 @@
             </tr>
         </thead>
         <tbody>
+            
             @foreach($authors as $author)
             <tr>
                 <td>{{ $author->id }}</td>
