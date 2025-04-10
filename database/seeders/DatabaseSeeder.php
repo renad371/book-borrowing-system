@@ -32,10 +32,10 @@ class DatabaseSeeder extends Seeder
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
-\
+
         $admin = Role::create(['name' => 'Administrator']);
         $user = Role::create(['name' => 'user']);
-\
+
         $admin->givePermissionTo(Permission::all());
         $user->givePermissionTo(['borrow books', 'return books']);
 
