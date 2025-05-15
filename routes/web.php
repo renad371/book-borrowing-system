@@ -54,4 +54,5 @@ Route::middleware('auth')->group(function () {
         Route::put('edit_author/{author}', [AuthorController::class, 'update'])->name('edit_author');
         Route::delete('delete_author/{author}', [AuthorController::class, 'destroy'])->name('delete_author');
     });
+    
 });

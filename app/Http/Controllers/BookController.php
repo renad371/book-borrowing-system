@@ -90,6 +90,7 @@ class BookController extends Controller
         return redirect()->back()->with('success', 'Book added successfully');
     }
 
+    
     public function borrow(Request $request)
     {
 
